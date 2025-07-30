@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "update": "node scripts/daily-update.js",
+    "commit-update": "npm run update && git add . && git commit -m \"Daily portfolio update - $(date +'%Y-%m-%d')\" && git push"
   },
   "dependencies": {
     "next": "14.0.4",
