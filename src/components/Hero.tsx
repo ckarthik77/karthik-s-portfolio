@@ -66,7 +66,7 @@ const Hero = () => {
             className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
             Passionate about building innovative web applications and exploring the fascinating world of Machine Learning. 
-            Currently diving deep into React and modern web technologies.
+            Currently diving deep into React and modern web technologies. Completed 50+ coding challenges.
           </motion.p>
 
           {/* CTA Buttons */}

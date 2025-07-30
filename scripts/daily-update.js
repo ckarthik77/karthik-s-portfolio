@@ -79,7 +79,49 @@ const updateLearning = () => {
   return randomTopic;
 };
 
-const updateProjects = () => {
+const updateProjects = async () => {
+  const projectsFile = path.join(__dirname, '../src/components/Projects.tsx');
+  let content = fs.readFileSync(projectsFile, 'utf8');
+  
+  // Import project generator
+  const { generateAndDeployProject } = require('./project-generator');
+  
+  try {
+    // Generate and deploy a real project
+    const newProject = await generateAndDeployProject();
+    
+    if (newProject) {
+      // Add new project to the projects array
+      const projectsRegex = /(const projects = \[)(.*?)(\];)/s;
+      const match = content.match(projectsRegex);
+      
+      if (match) {
+        const newProjectString = `
+    {
+      title: '${newProject.name}',
+      description: '${newProject.description}',
+      technologies: [${newProject.technologies.map(tech => `'${tech}'`).join(', ')}],
+      githubUrl: 'https://github.com/ckarthik77/${newProject.name.toLowerCase().replace(/\s+/g, '-')}',
+      liveUrl: '${newProject.deploymentUrl}',
+      stars: ${Math.floor(Math.random() * 20) + 5},
+      forks: ${Math.floor(Math.random() * 10) + 2},
+      type: '${newProject.type}',
+    },`;
+        
+        content = content.replace(projectsRegex, `$1${newProjectString}$2$3`);
+      }
+      
+      fs.writeFileSync(projectsFile, content);
+      return newProject;
+    }
+  } catch (error) {
+    console.error('Failed to generate project:', error);
+    // Fallback to simple project addition
+    return updateProjectsFallback();
+  }
+};
+
+const updateProjectsFallback = () => {
   const projectsFile = path.join(__dirname, '../src/components/Projects.tsx');
   let content = fs.readFileSync(projectsFile, 'utf8');
   
@@ -157,7 +199,7 @@ const updateStats = () => {
 };
 
 // Main update function
-const performDailyUpdate = () => {
+const performDailyUpdate = async () => {
   const today = new Date().toISOString().split('T')[0];
   
   console.log(`🔄 Performing daily update for ${today}...`);
@@ -165,7 +207,7 @@ const performDailyUpdate = () => {
   const updates = {
     skills: updateSkills(),
     learning: updateLearning(),
-    projects: updateProjects(),
+    projects: await updateProjects(),
     stats: updateStats()
   };
   
@@ -173,6 +215,9 @@ const performDailyUpdate = () => {
   console.log(`- Skills improved: ${updates.skills.length} skills`);
   console.log(`- Learning topic: ${updates.learning}`);
   console.log(`- New project: ${updates.projects.title}`);
+  if (updates.projects.deploymentUrl) {
+    console.log(`- Live URL: ${updates.projects.deploymentUrl}`);
+  }
   console.log(`- Achievement: ${updates.stats}`);
   
   return updates;

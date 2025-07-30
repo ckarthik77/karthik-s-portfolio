@@ -25,6 +25,8 @@ jobs:
       
     - name: Run daily updates
       run: node scripts/daily-update.js
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       
     - name: Build project
       run: npm run build
