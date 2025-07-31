@@ -14,15 +14,20 @@ const projectTemplates = {
     template: `
 import React, { useState } from 'react';
 
+interface Message {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 const AIChatApp = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
     
-    const userMessage = { role: 'user', content: input };
+    const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setLoading(true);
@@ -35,7 +40,8 @@ const AIChatApp = () => {
       });
       
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'assistant', content: data.reply }]);
+      const assistantMessage: Message = { role: 'assistant', content: data.reply };
+      setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -88,75 +94,70 @@ export default AIChatApp;
   'ecommerce-dashboard': {
     name: 'E-commerce Dashboard',
     description: 'A comprehensive dashboard for e-commerce analytics and management.',
-    technologies: ['Next.js', 'Chart.js', 'Prisma', 'PostgreSQL'],
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     type: 'Full Stack',
     template: `
 import React from 'react';
-import { Line, Bar, Doughnut } from 'react-chartjs-2';
 
 const EcommerceDashboard = () => {
-  const salesData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: [{
-      label: 'Sales',
-      data: [12, 19, 3, 5, 2, 3],
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1
-    }]
-  };
+  const stats = [
+    { label: 'Total Sales', value: '$45,231', change: '+20.1%', color: 'text-green-400' },
+    { label: 'Orders', value: '2,350', change: '+180.1%', color: 'text-blue-400' },
+    { label: 'Customers', value: '1,234', change: '+19%', color: 'text-purple-400' },
+    { label: 'Products', value: '456', change: '+12%', color: 'text-yellow-400' }
+  ];
 
-  const productData = {
-    labels: ['Electronics', 'Clothing', 'Books', 'Home'],
-    datasets: [{
-      data: [300, 50, 100, 80],
-      backgroundColor: [
-        '#FF6384',
-        '#36A2EB',
-        '#FFCE56',
-        '#4BC0C0'
-      ]
-    }]
-  };
+  const recentOrders = [
+    { id: 1, customer: 'John Doe', amount: '$299.00', status: 'Completed' },
+    { id: 2, customer: 'Jane Smith', amount: '$199.00', status: 'Processing' },
+    { id: 3, customer: 'Bob Johnson', amount: '$599.00', status: 'Completed' }
+  ];
 
   return (
     <div className="max-w-7xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-8">E-commerce Dashboard</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-gray-400 text-sm">Total Sales</h3>
-          <p className="text-3xl font-bold text-green-400">$45,231</p>
-          <p className="text-green-600 text-sm">+20.1% from last month</p>
-        </div>
-        
-        <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-gray-400 text-sm">Orders</h3>
-          <p className="text-3xl font-bold text-blue-400">2,350</p>
-          <p className="text-blue-600 text-sm">+180.1% from last month</p>
-        </div>
-        
-        <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-gray-400 text-sm">Customers</h3>
-          <p className="text-3xl font-bold text-purple-400">1,234</p>
-          <p className="text-purple-600 text-sm">+19% from last month</p>
-        </div>
-        
-        <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-gray-400 text-sm">Products</h3>
-          <p className="text-3xl font-bold text-yellow-400">456</p>
-          <p className="text-yellow-600 text-sm">+12% from last month</p>
-        </div>
+        {stats.map((stat, index) => (
+          <div key={index} className="bg-gray-800 p-6 rounded-lg">
+            <h3 className="text-gray-400 text-sm">{stat.label}</h3>
+            <p className={\`text-3xl font-bold \${stat.color}\`}>{stat.value}</p>
+            <p className="text-green-600 text-sm">{stat.change} from last month</p>
+          </div>
+        ))}
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">Sales Trend</h3>
-          <Line data={salesData} />
+          <h3 className="text-xl font-semibold mb-4">Recent Orders</h3>
+          <div className="space-y-3">
+            {recentOrders.map((order) => (
+              <div key={order.id} className="flex justify-between items-center p-3 bg-gray-700 rounded">
+                <div>
+                  <p className="font-medium">{order.customer}</p>
+                  <p className="text-sm text-gray-400">{order.amount}</p>
+                </div>
+                <span className={\`px-2 py-1 rounded text-xs \${order.status === 'Completed' ? 'bg-green-600' : 'bg-yellow-600'}\`}>
+                  {order.status}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-4">Product Categories</h3>
-          <Doughnut data={productData} />
+          <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
+          <div className="space-y-3">
+            <button className="w-full p-3 bg-blue-600 hover:bg-blue-700 rounded transition-colors">
+              Add New Product
+            </button>
+            <button className="w-full p-3 bg-green-600 hover:bg-green-700 rounded transition-colors">
+              View Analytics
+            </button>
+            <button className="w-full p-3 bg-purple-600 hover:bg-purple-700 rounded transition-colors">
+              Manage Orders
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -175,15 +176,23 @@ export default EcommerceDashboard;
     template: `
 import React, { useState, useEffect } from 'react';
 
+interface Task {
+  id: number;
+  title: string;
+  completed: boolean;
+  priority: string;
+  createdAt: string;
+}
+
 const TaskManager = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
   const [filter, setFilter] = useState('all');
 
   const addTask = () => {
     if (!newTask.trim()) return;
     
-    const task = {
+    const task: Task = {
       id: Date.now(),
       title: newTask,
       completed: false,
@@ -195,13 +204,13 @@ const TaskManager = () => {
     setNewTask('');
   };
 
-  const toggleTask = (id) => {
+  const toggleTask = (id: number) => {
     setTasks(prev => prev.map(task => 
       task.id === id ? { ...task, completed: !task.completed } : task
     ));
   };
 
-  const deleteTask = (id) => {
+  const deleteTask = (id: number) => {
     setTasks(prev => prev.filter(task => task.id !== id));
   };
 
@@ -324,9 +333,12 @@ const generateProject = async (projectType) => {
     dependencies: {
       "react": "^18.0.0",
       "react-dom": "^18.0.0",
-      "next": "^14.0.0",
+      "next": "^14.0.0"
+    },
+    devDependencies: {
       "typescript": "^5.0.0",
       "@types/react": "^18.0.0",
+      "@types/react-dom": "^18.0.0",
       "@types/node": "^20.0.0"
     }
   };
@@ -427,9 +439,9 @@ Open [http://localhost:3000](http://localhost:3000) to view the application.
   };
 };
 
-// Deploy project to Vercel
+// Deploy project to Vercel and GitHub
 const deployProject = async (projectDir, projectName) => {
-  console.log(`🚀 Deploying ${projectName} to Vercel...`);
+  console.log(`🚀 Deploying ${projectName} to Vercel and GitHub...`);
   
   try {
     // Change to project directory
@@ -442,6 +454,33 @@ const deployProject = async (projectDir, projectName) => {
     // Build project
     console.log('🔨 Building project...');
     execSync('npm run build', { stdio: 'inherit' });
+    
+    // Initialize Git repository
+    console.log('📝 Initializing Git repository...');
+    execSync('git init', { stdio: 'inherit' });
+    execSync('git add .', { stdio: 'inherit' });
+    execSync('git commit -m "Initial commit"', { stdio: 'inherit' });
+    
+    // Create GitHub repository using GitHub CLI
+    const repoName = projectName.toLowerCase().replace(/\s+/g, '-');
+    console.log(`🐙 Creating GitHub repository: ${repoName}...`);
+    
+    try {
+      // Create repository on GitHub
+      execSync(`gh repo create ${repoName} --public --source=. --remote=origin --push`, { 
+        stdio: 'inherit',
+        env: { ...process.env, GITHUB_TOKEN: process.env.GITHUB_TOKEN }
+      });
+      
+      console.log(`✅ GitHub repository created: https://github.com/ckarthik77/${repoName}`);
+    } catch (ghError) {
+      console.log('⚠️ GitHub CLI not available, creating repository manually...');
+      // Fallback: Create repository manually
+      const githubUrl = `https://github.com/ckarthik77/${repoName}`;
+      console.log(`📋 Please create repository manually: ${githubUrl}`);
+      console.log('📋 Then run: git remote add origin https://github.com/ckarthik77/${repoName}.git');
+      console.log('📋 Then run: git push -u origin main');
+    }
     
     // Deploy to Vercel
     console.log('🌐 Deploying to Vercel...');
@@ -456,8 +495,12 @@ const deployProject = async (projectDir, projectName) => {
     
     console.log(`✅ ${projectName} deployed successfully!`);
     console.log(`🌐 Live URL: ${deploymentUrl}`);
+    console.log(`🐙 GitHub URL: https://github.com/ckarthik77/${repoName}`);
     
-    return deploymentUrl;
+    return {
+      deploymentUrl,
+      githubUrl: `https://github.com/ckarthik77/${repoName}`
+    };
   } catch (error) {
     console.error(`❌ Failed to deploy ${projectName}:`, error.message);
     return null;
@@ -471,11 +514,12 @@ const generateAndDeployProject = async () => {
   
   try {
     const project = await generateProject(randomProjectType);
-    const deploymentUrl = await deployProject(project.directory, project.name);
+    const deploymentResult = await deployProject(project.directory, project.name);
     
     return {
       ...project,
-      deploymentUrl
+      deploymentUrl: deploymentResult?.deploymentUrl,
+      githubUrl: deploymentResult?.githubUrl
     };
   } catch (error) {
     console.error('❌ Project generation failed:', error.message);

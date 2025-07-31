@@ -95,18 +95,18 @@ const updateProjects = async () => {
       const projectsRegex = /(const projects = \[)(.*?)(\];)/s;
       const match = content.match(projectsRegex);
       
-      if (match) {
-        const newProjectString = `
-    {
-      title: '${newProject.name}',
-      description: '${newProject.description}',
-      technologies: [${newProject.technologies.map(tech => `'${tech}'`).join(', ')}],
-      githubUrl: 'https://github.com/ckarthik77/${newProject.name.toLowerCase().replace(/\s+/g, '-')}',
-      liveUrl: '${newProject.deploymentUrl}',
-      stars: ${Math.floor(Math.random() * 20) + 5},
-      forks: ${Math.floor(Math.random() * 10) + 2},
-      type: '${newProject.type}',
-    },`;
+             if (match) {
+         const newProjectString = `
+     {
+       title: '${newProject.name}',
+       description: '${newProject.description}',
+       technologies: [${newProject.technologies.map(tech => `'${tech}'`).join(', ')}],
+       githubUrl: '${newProject.githubUrl || `https://github.com/ckarthik77/${newProject.name.toLowerCase().replace(/\s+/g, '-')}`}',
+       liveUrl: '${newProject.deploymentUrl}',
+       stars: ${Math.floor(Math.random() * 20) + 5},
+       forks: ${Math.floor(Math.random() * 10) + 2},
+       type: '${newProject.type}',
+     },`;
         
         content = content.replace(projectsRegex, `$1${newProjectString}$2$3`);
       }
@@ -217,6 +217,9 @@ const performDailyUpdate = async () => {
   console.log(`- New project: ${updates.projects.title}`);
   if (updates.projects.deploymentUrl) {
     console.log(`- Live URL: ${updates.projects.deploymentUrl}`);
+  }
+  if (updates.projects.githubUrl) {
+    console.log(`- GitHub URL: ${updates.projects.githubUrl}`);
   }
   console.log(`- Achievement: ${updates.stats}`);
   
