@@ -56,6 +56,12 @@ npm run commit-update
 - Task Management App
 - Real-time Analytics
 
+**NEW: Each project is now:**
+- ✅ **Built** with Next.js/React
+- ✅ **Deployed** to Vercel (live URL)
+- ✅ **GitHub Repository** created automatically
+- ✅ **Added to portfolio** with live links
+
 ## 🔧 Configuration
 
 ### Customize Updates:
@@ -94,7 +100,16 @@ Edit `scripts/daily-update.js` to:
 
 1. **Enable GitHub Actions** in your repository
 2. **Set up Vercel token** in repository secrets
-3. **Test manually**: Run `npm run update`
-4. **Monitor**: Check daily commits
+3. **Set up GitHub token** in repository secrets (for repo creation)
+4. **Test manually**: Run `npm run update`
+5. **Monitor**: Check daily commits
+
+## 🆕 Latest Features
+
+### GitHub Repository Creation
+- **Automatic**: Creates GitHub repos for each generated project
+- **Public**: All repos are public for visibility
+- **Linked**: Portfolio shows both live URL and GitHub repo
+- **Fallback**: Manual creation instructions if GitHub CLI unavailable
 
 Your portfolio will now evolve automatically, showing your commitment to continuous learning and improvement! 🎉 
