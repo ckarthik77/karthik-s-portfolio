@@ -6,7 +6,7 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-  projectTypes: ['ai-chat-app', 'ecommerce-dashboard', 'task-manager', 'weather-app'],
+  projectTypes: ['ai-chat-app', 'ecommerce-dashboard', 'task-manager', 'weather-app', 'social-media-dashboard'],
   deploymentPlatforms: ['vercel', 'netlify'],
   githubUsername: 'ckarthik77'
 };
@@ -476,6 +476,140 @@ const WeatherDashboard = () => {
 };
 
 export default WeatherDashboard;
+    `
+  },
+  
+  'social-media-dashboard': {
+    name: 'Social Media Dashboard',
+    description: 'A comprehensive social media analytics dashboard with real-time metrics.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js'],
+    type: 'Analytics',
+    template: `
+import React, { useState } from 'react';
+
+interface SocialMetric {
+  platform: string;
+  followers: number;
+  engagement: number;
+  posts: number;
+  growth: number;
+  color: string;
+}
+
+const SocialMediaDashboard = () => {
+  const [metrics] = useState<SocialMetric[]>([
+    {
+      platform: 'Instagram',
+      followers: 15420,
+      engagement: 8.5,
+      posts: 234,
+      growth: 12.3,
+      color: 'bg-gradient-to-r from-purple-500 to-pink-500'
+    },
+    {
+      platform: 'Twitter',
+      followers: 8920,
+      engagement: 6.2,
+      posts: 156,
+      growth: 8.7,
+      color: 'bg-gradient-to-r from-blue-400 to-blue-600'
+    },
+    {
+      platform: 'LinkedIn',
+      followers: 3240,
+      engagement: 4.8,
+      posts: 89,
+      growth: 15.2,
+      color: 'bg-gradient-to-r from-blue-600 to-blue-800'
+    },
+    {
+      platform: 'TikTok',
+      followers: 45600,
+      engagement: 12.1,
+      posts: 567,
+      growth: 23.4,
+      color: 'bg-gradient-to-r from-pink-500 to-red-500'
+    }
+  ]);
+
+  const [recentPosts] = useState([
+    { id: 1, content: 'Just launched our new product! 🚀', platform: 'Instagram', likes: 234, comments: 45, shares: 12 },
+    { id: 2, content: 'Excited to share our latest tech insights', platform: 'Twitter', likes: 156, comments: 23, shares: 8 },
+    { id: 3, content: 'Building the future of web development', platform: 'LinkedIn', likes: 89, comments: 12, shares: 5 }
+  ]);
+
+  return (
+    <div className="max-w-7xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-8">Social Media Dashboard</h1>
+      
+      {/* Platform Metrics */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        {metrics.map((metric) => (
+          <div key={metric.platform} className={\`\${metric.color} rounded-lg p-6 text-white\`}>
+            <h3 className="text-lg font-semibold mb-2">{metric.platform}</h3>
+            <div className="text-3xl font-bold mb-1">{metric.followers.toLocaleString()}</div>
+            <div className="text-sm opacity-90">Followers</div>
+            <div className="mt-4 space-y-2">
+              <div className="flex justify-between text-sm">
+                <span>Engagement</span>
+                <span>{metric.engagement}%</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span>Growth</span>
+                <span className="text-green-300">+{metric.growth}%</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {/* Analytics Overview */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="bg-white p-6 rounded-lg shadow">
+          <h3 className="text-xl font-semibold mb-4">Total Reach</h3>
+          <div className="text-4xl font-bold text-blue-600 mb-2">
+            {metrics.reduce((sum, m) => sum + m.followers, 0).toLocaleString()}
+          </div>
+          <p className="text-gray-600">Across all platforms</p>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow">
+          <h3 className="text-xl font-semibold mb-4">Average Engagement</h3>
+          <div className="text-4xl font-bold text-green-600 mb-2">
+            {(metrics.reduce((sum, m) => sum + m.engagement, 0) / metrics.length).toFixed(1)}%
+          </div>
+          <p className="text-gray-600">Overall engagement rate</p>
+        </div>
+      </div>
+      
+      {/* Recent Posts */}
+      <div className="bg-white p-6 rounded-lg shadow">
+        <h3 className="text-xl font-semibold mb-4">Recent Posts</h3>
+        <div className="space-y-4">
+          {recentPosts.map((post) => (
+            <div key={post.id} className="border-b border-gray-200 pb-4 last:border-b-0">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <p className="font-medium">{post.content}</p>
+                  <p className="text-sm text-gray-500">{post.platform}</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-sm text-gray-600">
+                    <span className="mr-4">❤️ {post.likes}</span>
+                    <span className="mr-4">💬 {post.comments}</span>
+                    <span>🔄 {post.shares}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SocialMediaDashboard;
     `
   }
 };
