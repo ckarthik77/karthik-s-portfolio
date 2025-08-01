@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "update": "node scripts/daily-update.js",
-    "commit-update": "npm run update && git add . && git commit -m \"Daily portfolio update - $(date +'%Y-%m-%d')\" && git push"
+    "commit-update": "npm run update && git add . && git commit -m \"🤖 Daily portfolio update - $(date +'%Y-%m-%d %H:%M UTC')\" && git push",
+    "generate-project": "node scripts/project-generator.js",
+    "test-update": "npm run update && echo \"✅ Test update completed successfully\"",
+    "clean": "rm -rf .next node_modules && npm install"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -30,5 +33,9 @@
     "tailwindcss": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 } 

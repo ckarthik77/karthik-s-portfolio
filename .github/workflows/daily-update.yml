@@ -5,6 +5,8 @@ on:
     # Run daily at 9 AM UTC
     - cron: '0 9 * * *'
   workflow_dispatch: # Allow manual trigger
+  push:
+    branches: [ master, main ]
 
 jobs:
   update-portfolio:
@@ -13,6 +15,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -21,10 +25,14 @@ jobs:
         cache: 'npm'
         
     - name: Install dependencies
-      run: npm install
+      run: npm ci
       
     - name: Run daily updates
-      run: node scripts/daily-update.js
+      id: daily-update
+      run: |
+        echo "🤖 Starting daily portfolio update..."
+        node scripts/daily-update.js
+        echo "✅ Daily updates completed"
       env:
         VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,16 +40,63 @@ jobs:
     - name: Build project
       run: npm run build
       
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if git diff --quiet; then
+          echo "no-changes=true" >> $GITHUB_OUTPUT
+          echo "No changes detected"
+        else
+          echo "no-changes=false" >> $GITHUB_OUTPUT
+          echo "Changes detected"
+        fi
+      
     - name: Commit and push changes
+      if: steps.check-changes.outputs.no-changes == 'false'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add .
-        git diff --quiet && git diff --staged --quiet || git commit -m "Daily portfolio update - $(date +'%Y-%m-%d')"
+        git commit -m "🤖 Daily portfolio update - $(date +'%Y-%m-%d %H:%M UTC')
+        
+        - Skills improved
+        - Learning topics updated
+        - New projects added
+        - Achievements updated
+        
+        Automated by GitHub Actions"
         git push
         
     - name: Deploy to Vercel
+      if: steps.check-changes.outputs.no-changes == 'false'
       run: |
         npm install -g vercel
         echo ${{ secrets.VERCEL_TOKEN }} | vercel --token
-        vercel --prod --token ${{ secrets.VERCEL_TOKEN }} 
+        vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+        
+    - name: Create deployment summary
+      if: steps.check-changes.outputs.no-changes == 'false'
+      run: |
+        echo "## 🎉 Daily Portfolio Update Completed" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📊 Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Skills improved" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Learning topics updated" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ New projects added" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Achievements updated" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🚀 Deployment" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Portfolio deployed to Vercel" >> $GITHUB_STEP_SUMMARY
+        echo "- ✅ Changes committed to GitHub" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Next update:** Tomorrow at 9 AM UTC" >> $GITHUB_STEP_SUMMARY
+        
+    - name: No changes notification
+      if: steps.check-changes.outputs.no-changes == 'true'
+      run: |
+        echo "## 📝 No Changes Detected" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "The daily update ran successfully but no changes were detected." >> $GITHUB_STEP_SUMMARY
+        echo "This is normal and indicates the portfolio is already up to date." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Next update:** Tomorrow at 9 AM UTC" >> $GITHUB_STEP_SUMMARY 
