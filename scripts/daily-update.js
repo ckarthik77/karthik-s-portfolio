@@ -23,7 +23,17 @@ const CONFIG = {
     'Real-time Applications',
     'Progressive Web Apps',
     'Accessibility Best Practices',
-    'Security Best Practices'
+    'Security Best Practices',
+    'Database Optimization',
+    'API Design Patterns',
+    'State Management',
+    'Component Architecture',
+    'Build Tools & Bundlers',
+    'Docker & Containerization',
+    'Kubernetes Orchestration',
+    'Serverless Architecture',
+    'Edge Computing',
+    'Blockchain Development'
   ],
   achievements: [
     'Completed 50+ coding challenges',
@@ -40,7 +50,17 @@ const CONFIG = {
     'Implemented CI/CD for 8 projects',
     'Created 5 reusable component libraries',
     'Optimized database queries by 50%',
-    'Built 3 full-stack applications'
+    'Built 3 full-stack applications',
+    'Mentored 10+ developers',
+    'Published 5 npm packages',
+    'Spoke at 3 tech conferences',
+    'Wrote 20+ technical blog posts',
+    'Contributed to React core',
+    'Optimized Core Web Vitals',
+    'Implemented microservices',
+    'Built real-time chat system',
+    'Created design system',
+    'Automated testing pipeline'
   ]
 };
 
