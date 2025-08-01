@@ -11,7 +11,12 @@
     "commit-update": "npm run update && git add . && git commit -m \"🤖 Daily portfolio update - $(date +'%Y-%m-%d %H:%M UTC')\" && git push",
     "generate-project": "node scripts/project-generator.js",
     "test-update": "npm run update && echo \"✅ Test update completed successfully\"",
-    "clean": "rm -rf .next node_modules && npm install"
+    "clean": "rm -rf .next node_modules && npm install",
+    "analytics": "node scripts/analytics.js",
+    "notifications": "node scripts/notifications.js",
+    "monitor": "node scripts/monitor.js",
+    "diagnostic": "npm run monitor",
+    "health-check": "npm run monitor"
   },
   "dependencies": {
     "next": "14.0.4",
