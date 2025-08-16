@@ -31,15 +31,15 @@ const Skills = () => {
         { name: 'HTML', level: 85 },
         { name: 'CSS', level: 80 },
         { name: 'JavaScript', level: 75 },
-        { name: 'React', level: 88 },
+        { name: 'React', level: 95 },
       ],
     },
     {
       category: 'Backend',
       skills: [
-        { name: 'Python', level: 80 },
+        { name: 'Python', level: 88 },
         { name: 'APIs', level: 75 },
-        { name: 'Node.js', level: 65 },
+        { name: 'Node.js', level: 71 },
       ],
     },
     {

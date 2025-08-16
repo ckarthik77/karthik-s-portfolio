@@ -56,7 +56,6 @@ npm run clean
 - Python: 55% → 57%
 
 ### New Learning Topics:
-- Advanced React Patterns
 - Server-Side Rendering
 - GraphQL Integration
 - Micro-Frontends
@@ -70,7 +69,6 @@ npm run clean
 - Real-time Applications
 - Progressive Web Apps
 - Accessibility Best Practices
-- Security Best Practices
 
 ### New Projects:
 - AI Chat Application
