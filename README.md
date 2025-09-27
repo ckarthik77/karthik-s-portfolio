@@ -1,4 +1,4 @@
-# Karthik's Enhanced Portfolio v2.0
+#  Karthik's Enhanced Portfolio v2.0
 
 A cutting-edge, performance-optimized portfolio website built with Next.js 15, TypeScript, and advanced web technologies. Featuring immersive 3D elements, AI-powered interactions, and bleeding-edge design patterns.
 
