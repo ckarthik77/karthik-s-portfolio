@@ -3,7 +3,7 @@
 # 🌟 Karthik's Portfolio
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=22&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%26+ML+Enthusiast;Modern+Portfolio+with+Next.js+%26+TypeScript;Crafting+Digital+Experiences+with+Code" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=22&duration=3000&pause=1000&color=6366F1&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+%26+ML+Enthusiast;Interactive+AI+Demos+%26+Creative+Projects;Modern+Portfolio+with+Next.js+%26+TypeScript;Crafting+Digital+Experiences+with+Code" alt="Typing SVG" />
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-2.0-success?style=flat-square&logo=semantic-release" alt="Version">
+  <img src="https://img.shields.io/badge/Version-3.0-success?style=flat-square&logo=semantic-release" alt="Version">
   <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square&logo=open-source-initiative" alt="License">
   <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square&logo=github" alt="PRs">
   <img src="https://img.shields.io/badge/Maintained-Yes-orange?style=flat-square&logo=maintenance" alt="Maintained">
@@ -34,12 +34,15 @@
 
 ### 🚀 **What's Inside?**
 
-✨ **Modern Glassmorphism Design**  
+✨ **Interactive AI Demonstrations**  
+🎮 **Real-time Creative Projects**  
+🎨 **Cyber-Luxe Design System**  
+🎬 **Neural Background Animations**  
+📡 **Creative Radar Visualization**  
+🔊 **Interactive Sound System**  
+💻 **Terminal CLI Interface**  
 📱 **Fully Responsive Layout**  
-🎬 **Smooth Animations & Transitions**  
-🔍 **SEO Optimized & Fast Loading**  
-📧 **Functional Contact Form**  
-🎯 **Interactive User Experience**
+🔍 **SEO Optimized & Fast Loading**
 
 </td>
 <td align="center" width="50%">
@@ -53,7 +56,9 @@ const portfolioStats = {
   accessibility: "100%",
   seo: "98%",
   bestPractices: "100%",
-  mobileScore: "Perfect"
+  mobileScore: "Perfect",
+  aiDemos: 5,
+  projects: "10+"
 };
 ```
 
@@ -69,20 +74,29 @@ const portfolioStats = {
 
 <table>
 <tr>
+<th width="20%">🤖 AI Demos</th>
 <th width="20%">🎨 Design</th>
 <th width="20%">⚡ Performance</th>
-<th width="20%">📱 Responsive</th>
 <th width="20%">🎭 Animations</th>
 <th width="20%">🔧 Functionality</th>
 </tr>
 <tr>
 <td>
 
-• 🌈 **Glassmorphism UI**  
-• 🌙 **Dark Theme**  
-• 🎨 **Gradient Effects**  
+• 🌦️ **Weather Dashboard**  
+• 📚 **RAG AI System**  
+• 💼 **Job Search AI**  
+• 🏙️ **SynCity Simulator**  
+• 🚦 **Sign Detection**  
+
+</td>
+<td>
+
+• 🌈 **Cyber-Luxe UI**  
+• 🌌 **Neural Background**  
+• 🎨 **Glassmorphism**  
+• 🎯 **Radar Visualization**  
 • ✨ **Modern Aesthetics**  
-• 🎯 **Intuitive Layout**  
 
 </td>
 <td>
@@ -96,27 +110,18 @@ const portfolioStats = {
 </td>
 <td>
 
-• 📱 **Mobile First**  
-• 💻 **Desktop Ready**  
-• 📟 **Tablet Optimized**  
-• 🔄 **Flexible Grid**  
-• 🎯 **Breakpoint Magic**  
-
-</td>
-<td>
-
 • 🎬 **Framer Motion**  
 • ⌨️ **Typing Effects**  
-• 📊 **Progress Bars**  
-• 🌊 **Smooth Scroll**  
+• 🌊 **Neural Animations**  
+• 🎯 **Radar Scanning**  
 • ✨ **Hover Effects**  
 
 </td>
 <td>
 
+• 💻 **Terminal CLI**  
+• 🔊 **Sound System**  
 • 📝 **Contact Form**  
-• 📧 **EmailJS Integration**  
-• 🔍 **Form Validation**  
 • 🎮 **Easter Eggs**  
 • 🔗 **Social Links**  
 
@@ -134,47 +139,21 @@ const portfolioStats = {
 
 ### 🌐 **Experience It Live!**
 
-<a href="https://karthik-portfolio.vercel.app" target="_blank">
+<a href="https://karthik-portfolio-hx2iszk03-luffys-projects-7a77377d.vercel.app" target="_blank">
   <img src="https://img.shields.io/badge/🚀_Live_Portfolio-667eea?style=for-the-badge&logoColor=white&labelColor=764ba2" alt="Live Demo" height="60">
 </a>
 
-### 📸 **Portfolio Sections**
+### 🤖 **Interactive AI Demonstrations**
 
-<details>
-<summary><b>🖼️ View Portfolio Screenshots (Click to expand)</b></summary>
+Explore cutting-edge AI applications built into the portfolio:
 
-<br>
-
-<table>
-<tr>
-<td width="50%">
-<h4 align="center">🏠 Hero Section</h4>
-<img src="images/hero-section.png" width="100%" alt="Hero Section" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-</td>
-<td width="50%">
-<h4 align="center">👨‍💻 About Section</h4>
-<img src="images/about-section.png" width="100%" alt="About Section" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-</td>
-</tr>
-<tr>
-<td width="50%">
-<h4 align="center">🛠️ Skills Section</h4>
-<img src="images/skills-section.png" width="100%" alt="Skills Section" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-</td>
-<td width="50%">
-<h4 align="center">🚀 Projects Section</h4>
-<img src="images/projects-section.png" width="100%" alt="Projects Section" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<h4 align="center">📬 Contact Section</h4>
-<img src="images/contact-section.png" width="100%" alt="Contact Section" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-</td>
-</tr>
-</table>
-
-</details>
+| Demo | Description | Tech Stack |
+|------|-------------|-----------|
+| 🌦️ **Weather Dashboard** | Real-time weather data with AI insights | OpenWeatherMap API, React |
+| 📚 **RAG AI System** | Retrieval-Augmented Generation chatbot | LangChain, Vector DB |
+| 💼 **Job Search AI** | Intelligent job matching assistant | AI/ML Models |
+| 🏙️ **SynCity Simulator** | Urban planning simulation | 3D Graphics, AI |
+| 🚦 **Sign Detection** | Real-time traffic sign recognition | Computer Vision, TensorFlow |
 
 </div>
 
@@ -188,35 +167,40 @@ const portfolioStats = {
 
 <table>
 <tr>
-<td align="center" width="16.66%">
+<td align="center" width="14.28%">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" width="60" height="60" alt="Next.js">
 <br><strong>Next.js 14</strong>
 <br><sub>React Framework</sub>
 </td>
-<td align="center" width="16.66%">
+<td align="center" width="14.28%">
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" width="60" height="60" alt="TypeScript">
 <br><strong>TypeScript</strong>
 <br><sub>Type Safety</sub>
 </td>
-<td align="center" width="16.66%">
+<td align="center" width="14.28%">
 <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" width="60" height="60" alt="Tailwind CSS">
 <br><strong>Tailwind CSS</strong>
 <br><sub>Utility Styling</sub>
 </td>
-<td align="center" width="16.66%">
+<td align="center" width="14.28%">
 <img src="https://www.vectorlogo.zone/logos/framer/framer-icon.svg" width="60" height="60" alt="Framer Motion">
 <br><strong>Framer Motion</strong>
 <br><sub>Animations</sub>
 </td>
-<td align="center" width="16.66%">
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="60" height="60" alt="React Hook Form">
+<td align="center" width="14.28%">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" width="60" height="60" alt="React">
 <br><strong>React Hook Form</strong>
 <br><sub>Form Handling</sub>
 </td>
-<td align="center" width="16.66%">
+<td align="center" width="14.28%">
 <img src="https://lucide.dev/logo.light.svg" width="60" height="60" alt="Lucide React">
 <br><strong>Lucide React</strong>
 <br><sub>Icon Library</sub>
+</td>
+<td align="center" width="14.28%">
+<img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" width="60" height="60" alt="TensorFlow">
+<br><strong>TensorFlow.js</strong>
+<br><sub>AI/ML Models</sub>
 </td>
 </tr>
 </table>
@@ -273,7 +257,7 @@ Chrome, Firefox, Safari
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/CKarthik77/portfolio.git
+git clone https://github.com/ckarthik77/karthik-s-portfolio.git
 
 # 2️⃣ Navigate to project directory
 cd portfolio
@@ -292,40 +276,45 @@ yarn dev
 # Visit http://localhost:3000
 ```
 
+### 📜 **Available NPM Scripts**
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run analytics    # Generate performance reports
+npm run notifications # Display system notifications
+npm run monitor      # Run system health checks
+npm run diagnostic   # Full system diagnostic
+npm run health-check # Quick health check
+```
+
 <div align="center">
 
 ### ⚡ **Quick Deploy Options**
 
 <table>
 <tr>
-<td align="center" width="25%">
+<td align="center" width="33%">
 
 **🚀 Vercel**
 <br>
-<a href="https://vercel.com/new/clone?repository-url=https://github.com/CKarthik77/portfolio">
+<a href="https://vercel.com/new/clone?repository-url=https://github.com/ckarthik77/karthik-s-portfolio">
   <img src="https://img.shields.io/badge/Deploy_to-Vercel-black?style=for-the-badge&logo=vercel" alt="Deploy to Vercel">
 </a>
 
 </td>
-<td align="center" width="25%">
+<td align="center" width="33%">
 
 **🌐 Netlify**
 <br>
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/CKarthik77/portfolio">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/ckarthik77/karthik-s-portfolio">
   <img src="https://img.shields.io/badge/Deploy_to-Netlify-00C7B7?style=for-the-badge&logo=netlify" alt="Deploy to Netlify">
 </a>
 
 </td>
-<td align="center" width="25%">
-
-**📱 GitHub Pages**
-<br>
-<a href="https://ckarthik77.github.io/portfolio">
-  <img src="https://img.shields.io/badge/GitHub-Pages-222?style=for-the-badge&logo=github" alt="GitHub Pages">
-</a>
-
-</td>
-<td align="center" width="25%">
+<td align="center" width="33%">
 
 **🐳 Railway**
 <br>
@@ -361,7 +350,16 @@ yarn dev
 │   │   ├── 🛠️ Skills.tsx          # Animated skills display
 │   │   ├── 🚀 Projects.tsx        # Project showcase grid
 │   │   ├── 📧 Contact.tsx         # Contact form & info
-│   │   └── 🎯 ui/                 # Reusable UI components
+│   │   ├── 🌌 NeuralBackground.tsx # Animated background
+│   │   ├── 📡 RadarMap.tsx        # Creative radar visualization
+│   │   ├── 💻 TerminalCLI.tsx     # Interactive terminal
+│   │   ├── 🔊 SoundSystem.tsx     # Audio controls
+│   │   └── 🤖 ai-demos/           # AI demonstration components
+│   │       ├── WeatherDashboard.tsx
+│   │       ├── RAGSystem.tsx
+│   │       ├── JobSearch.tsx
+│   │       ├── SynCity.tsx
+│   │       └── SignDetection.tsx
 │   │
 │   ├── 📚 lib/
 │   │   ├── ⚙️ utils.ts            # Utility functions
@@ -373,6 +371,7 @@ yarn dev
 │
 ├── 📁 public/
 │   ├── 🖼️ images/               # Portfolio images
+│   ├── 🔊 sounds/               # Sound effects
 │   ├── 📄 resume.pdf            # Downloadable resume
 │   └── 🤖 robots.txt            # SEO optimization
 │
@@ -381,6 +380,7 @@ yarn dev
 │   ├── 🎨 tailwind.config.ts
 │   ├── 📝 tsconfig.json
 │   ├── ▶️ next.config.js
+│   ├── 🔒 vercel.json           # Vercel deployment config
 │   └── 📋 README.md
 ```
 
@@ -388,56 +388,85 @@ yarn dev
 
 ---
 
-## 🎨 **Design Philosophy & Features**
+## 🎨 **Key Features in Detail**
 
 <div align="center">
 
+### 🤖 **Interactive AI Demonstrations**
+
 <table>
 <tr>
-<th width="25%">🌈 Visual Design</th>
-<th width="25%">⚡ Performance</th>
-<th width="25%">🎭 Interactions</th>
-<th width="25%">♿ Accessibility</th>
+<th width="20%">Feature</th>
+<th width="40%">Description</th>
+<th width="40%">Technologies</th>
+</tr>
+<tr>
+<td align="center">🌦️ Weather Dashboard</td>
+<td>Real-time weather data with AI-powered insights and forecasting</td>
+<td>OpenWeatherMap API, React, TypeScript</td>
+</tr>
+<tr>
+<td align="center">📚 RAG AI System</td>
+<td>Retrieval-Augmented Generation chatbot for document Q&A</td>
+<td>LangChain, Vector Database, AI Models</td>
+</tr>
+<tr>
+<td align="center">💼 Job Search AI</td>
+<td>Intelligent job matching with personalized recommendations</td>
+<td>Machine Learning, NLP, React</td>
+</tr>
+<tr>
+<td align="center">🏙️ SynCity Simulator</td>
+<td>Interactive urban planning and city simulation</td>
+<td>3D Graphics, AI Simulation, WebGL</td>
+</tr>
+<tr>
+<td align="center">🚦 Sign Detection</td>
+<td>Real-time traffic sign recognition using computer vision</td>
+<td>TensorFlow.js, Computer Vision, Canvas API</td>
+</tr>
+</table>
+
+### 🎨 **Creative Visual Features**
+
+<table>
+<tr>
+<th width="25%">🌌 Neural Background</th>
+<th width="25%">📡 Radar Map</th>
+<th width="25%">💻 Terminal CLI</th>
+<th width="25%">🔊 Sound System</th>
 </tr>
 <tr>
 <td>
 
-• **Glassmorphism** effects  
-• **Dark theme** focus  
-• **Gradient** text & backgrounds  
-• **Minimalist** approach  
-• **Modern** typography  
-• **Consistent** spacing  
+• Particle animations  
+• Neural network visuals  
+• Dynamic gradients  
+• Performance optimized  
 
 </td>
 <td>
 
-• **Next.js 14** optimization  
-• **Image** optimization  
-• **Lazy loading** components  
-• **Bundle** splitting  
-• **SEO** optimization  
-• **Fast** loading times  
+• Creative visualization  
+• Scanning animations  
+• Interactive elements  
+• Project mapping  
 
 </td>
 <td>
 
-• **Smooth** animations  
-• **Hover** effects  
-• **Typing** animations  
-• **Progress** bars  
-• **Micro** interactions  
-• **Scroll** triggers  
+• Command interface  
+• Easter eggs  
+• Theme controls  
+• Developer tools  
 
 </td>
 <td>
 
-• **Semantic** HTML  
-• **Keyboard** navigation  
-• **Screen reader** friendly  
-• **High contrast** ratios  
-• **Focus** indicators  
-• **ARIA** labels  
+• Interactive audio  
+• Sound effects  
+• Volume controls  
+• Ambient sounds  
 
 </td>
 </tr>
@@ -498,151 +527,6 @@ yarn dev
 
 ---
 
-## ⚙️ **Customization Guide**
-
-<div align="center">
-
-<details>
-<summary><b>🎨 How to Customize (Click to expand)</b></summary>
-
-<br>
-
-### 🔧 **Personal Information**
-
-<table align="left">
-<tr>
-<th width="50%">📁 **File Location**</th>
-<th width="50%">🎯 **What to Update**</th>
-</tr>
-<tr>
-<td valign="top">
-
-**`src/app/layout.tsx`**
-- Site metadata  
-- SEO information  
-- Open Graph tags  
-
-**`src/components/Hero.tsx`**  
-- Name and title  
-- Hero description  
-- Social media links  
-
-</td>
-<td valign="top">
-
-**`src/components/About.tsx`**  
-- About me content  
-- Feature cards  
-- Journey timeline  
-
-**`src/components/Skills.tsx`**  
-- Technical skills  
-- Skill levels  
-- Categories  
-
-</td>
-</tr>
-</table>
-
-<br>
-
-### 🎨 **Styling Customization**
-
-```typescript
-// tailwind.config.ts - Color Scheme
-theme: {
-  extend: {
-    colors: {
-      primary: '#667eea',
-      secondary: '#764ba2',
-      accent: '#f093fb'
-    }
-  }
-}
-```
-
-### 📧 **Contact Form Setup**
-
-```javascript
-// EmailJS Configuration
-const emailConfig = {
-  serviceId: 'your_service_id',
-  templateId: 'your_template_id',
-  publicKey: 'your_public_key'
-};
-```
-
-</details>
-
-</div>
-
----
-
-## 🎯 **Portfolio Sections**
-
-<div align="center">
-
-<table>
-<tr>
-<th width="20%">🦸 Hero</th>
-<th width="20%">👨‍💻 About</th>
-<th width="20%">🛠️ Skills</th>
-<th width="20%">🚀 Projects</th>
-<th width="20%">📧 Contact</th>
-</tr>
-<tr>
-<td>
-
-• Animated typing  
-• Gradient background  
-• CTA buttons  
-• Social links  
-• Floating elements  
-
-</td>
-<td>
-
-• Personal intro  
-• Feature cards  
-• Journey story  
-• Skill badges  
-• What I do  
-
-</td>
-<td>
-
-• Tech categories  
-• Progress bars  
-• Skill levels  
-• Learning goals  
-• Interactive UI  
-
-</td>
-<td>
-
-• Project cards  
-• GitHub stats  
-• Tech tags  
-• Live demos  
-• Source links  
-
-</td>
-<td>
-
-• Contact form  
-• Social media  
-• Professional info  
-• Email integration  
-• Validation  
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
 ## 🤝 **Contributing & Support**
 
 <div align="center">
@@ -652,7 +536,7 @@ const emailConfig = {
 <td width="25%" align="center">
 
 ### 🐛 **Report Issues**
-<a href="https://github.com/CKarthik77/portfolio/issues/new?template=bug_report.md">
+<a href="https://github.com/ckarthik77/karthik-s-portfolio/issues/new">
   <img src="https://img.shields.io/badge/Report_Bug-red?style=for-the-badge&logo=github" alt="Report Bug">
 </a>
 
@@ -660,7 +544,7 @@ const emailConfig = {
 <td width="25%" align="center">
 
 ### ✨ **Request Features**
-<a href="https://github.com/CKarthik77/portfolio/issues/new?template=feature_request.md">
+<a href="https://github.com/ckarthik77/karthik-s-portfolio/issues/new">
   <img src="https://img.shields.io/badge/Request_Feature-green?style=for-the-badge&logo=github" alt="Request Feature">
 </a>
 
@@ -668,7 +552,7 @@ const emailConfig = {
 <td width="25%" align="center">
 
 ### 🔧 **Submit PR**
-<a href="https://github.com/CKarthik77/portfolio/pulls">
+<a href="https://github.com/ckarthik77/karthik-s-portfolio/pulls">
   <img src="https://img.shields.io/badge/Submit_PR-blue?style=for-the-badge&logo=github" alt="Submit PR">
 </a>
 
@@ -676,7 +560,7 @@ const emailConfig = {
 <td width="25%" align="center">
 
 ### ⭐ **Star Project**
-<a href="https://github.com/CKarthik77/portfolio">
+<a href="https://github.com/ckarthik77/karthik-s-portfolio">
   <img src="https://img.shields.io/badge/Star_Project-yellow?style=for-the-badge&logo=github" alt="Star Project">
 </a>
 
@@ -689,7 +573,7 @@ const emailConfig = {
 ```bash
 # 🍴 Fork the repository
 # 📥 Clone your fork
-git clone https://github.com/YOUR-USERNAME/portfolio.git
+git clone https://github.com/YOUR-USERNAME/karthik-s-portfolio.git
 
 # 🌟 Create feature branch
 git checkout -b feature/amazing-enhancement
@@ -718,29 +602,29 @@ git push origin feature/amazing-enhancement
 <tr>
 <td width="33%" align="center">
 
-### 🎮 **Developer Easter Egg**
-Open browser console for a<br>
-special welcome message!
+### 🎮 **Developer Console**
+Open browser console for<br>
+special commands and messages!
 <br><br>
 <img src="https://img.shields.io/badge/Console-Surprise-purple?style=flat-square&logo=google-chrome" alt="Console Surprise">
 
 </td>
 <td width="33%" align="center">
 
-### 🎬 **Smooth Animations**
-Framer Motion powered<br>
-micro-interactions everywhere
+### 💻 **Terminal Commands**
+Type 'help' in the terminal<br>
+to discover hidden features
 <br><br>
-<img src="https://img.shields.io/badge/Animations-Smooth-blue?style=flat-square&logo=framer" alt="Smooth Animations">
+<img src="https://img.shields.io/badge/Terminal-Interactive-green?style=flat-square&logo=gnome-terminal" alt="Terminal">
 
 </td>
 <td width="33%" align="center">
 
-### ⚡ **Performance First**
-Optimized for speed and<br>
-perfect Lighthouse scores
+### 🔊 **Sound Experience**
+Interactive sound system<br>
+with ambient effects
 <br><br>
-<img src="https://img.shields.io/badge/Speed-Optimized-green?style=flat-square&logo=google" alt="Speed Optimized">
+<img src="https://img.shields.io/badge/Audio-Enhanced-blue?style=flat-square&logo=audio-technica" alt="Audio">
 
 </td>
 </tr>
@@ -807,7 +691,7 @@ This project is licensed under the **MIT License**
 ```
 MIT License
 
-Copyright (c) 2024 Karthik C
+Copyright (c) 2026 Karthik C
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -887,7 +771,7 @@ for inspiration & support
 
 <div align="center">
 
-<a href="https://github.com/CKarthik77">
+<a href="https://github.com/ckarthik77">
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </a>
 <a href="https://linkedin.com/in/ckarthik77">
@@ -902,7 +786,29 @@ for inspiration & support
 
 ---
 
+### 📊 **GitHub Stats**
+
+<img src="https://github-readme-stats.vercel.app/api?username=ckarthik77&show_icons=true&theme=tokyonight" alt="GitHub Stats" width="48%">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=ckarthik77&theme=tokyonight" alt="GitHub Streak" width="48%">
+
+---
+
 <div align="center">
   <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love">
   <img src="https://forthebadge.com/images/badges/powered-by-coffee.svg" alt="Powered by Coffee">
-  <img src="https://fortheba
+  <img src="https://forthebadge.com/images/badges/uses-brains.svg" alt="Uses Brains">
+</div>
+
+<br>
+
+<p align="center">
+  <strong>Made with ❤️ by Karthik C</strong>
+  <br>
+  <sub>Last Updated: September 2026</sub>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=ckarthik77&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views">
+</p>
+
+</div>
