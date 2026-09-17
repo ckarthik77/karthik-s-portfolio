@@ -1,45 +1,79 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
+import Navigation from '@/components/Navigation'
+import CustomCursor from '@/components/CustomCursor'
+import NeuralBackground from '@/components/NeuralBackground'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Skills from '@/components/Skills'
 import Projects from '@/components/Projects'
+import InteractiveMap from '@/components/InteractiveMap'
 import Contact from '@/components/Contact'
-import Navigation from '@/components/Navigation'
+import TerminalMode from '@/components/TerminalMode'
 
 export default function Home() {
+  const [terminalOpen, setTerminalOpen] = useState(false)
+
   useEffect(() => {
-    // Easter egg in console
-    console.log('%c🚀 Welcome to Karthik\'s Portfolio!', 'color: #3b82f6; font-size: 20px; font-weight: bold;')
-    console.log('%c💻 Built with Next.js, TypeScript, and Tailwind CSS', 'color: #8b5cf6; font-size: 14px;')
-    console.log('%c🤖 ML & Full Stack Development', 'color: #10b981; font-size: 14px;')
-    
-    // Add smooth scrolling for anchor links
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault()
-        const id = target.getAttribute('href')?.slice(1)
-        const element = document.getElementById(id!)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
+    // Console Easter Egg for engineers
+    console.log(
+      '%c🚀 Welcome to Chandika Karthik\'s Portfolio Systems!',
+      'color: #00f5d4; font-size: 16px; font-weight: bold;'
+    )
+    console.log(
+      '%c💻 Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion',
+      'color: #a3e635; font-size: 12px;'
+    )
+    console.log(
+      '%c📡 Press `~` or click Terminal in the header to open interactive CLI mode',
+      'color: #a855f7; font-size: 12px;'
+    )
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === '`' || e.key === '~') {
+        // Prevent typing backtick into focused input if toggling terminal
+        if (!(e.target as HTMLElement).matches('input, textarea')) {
+          e.preventDefault()
+          setTerminalOpen(prev => !prev)
         }
       }
     }
-    
-    document.addEventListener('click', handleAnchorClick)
-    return () => document.removeEventListener('click', handleAnchorClick)
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
   return (
-    <main className="min-h-screen gradient-bg">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+    <main className="min-h-screen bg-[#06090f] text-slate-100 relative selection:bg-cyan-500/20 selection:text-cyan-300">
+      {/* Dynamic Custom Cursor */}
+      <CustomCursor />
+
+      {/* Global Neural Network Background */}
+      <NeuralBackground />
+
+      {/* Top Header Navigation */}
+      <Navigation onOpenTerminal={() => setTerminalOpen(true)} />
+
+      {/* Page Sections */}
+      <div className="relative z-10">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <InteractiveMap />
+        <Contact />
+      </div>
+
+      {/* Interactive Developer CLI Terminal */}
+      <TerminalMode
+        isOpen={terminalOpen}
+        onClose={() => setTerminalOpen(false)}
+        onNavigateToDemo={(demoId) => {
+          setTerminalOpen(false)
+          document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+        }}
+      />
     </main>
   )
-} 
+}
